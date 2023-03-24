@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='img/stadist.ico')}}"
+      type="image/x-icon"
+    />
+    <title>Calculadora de medias</title>
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/estilos.css')}}"
+  />
+</head>
+<body>
+    <h3 class="mensaje">{{ message }}</h3>
+    <nav>
+        <h3 class="enmedio">CALCULADORA DE DIFERENCIA SIGNIFICATIVA PRETEST-POSTTEST BASADO EN EL INTERVALO DE CONFIANZA</h3>
+        <h4 class="author">ELABORADO POR: <h6 class="nombre">ARTURO RODRÍGUEZ PHD</h6></h4>
+        <h6 class="aviso">PS: Es preferible agregar la misma cantidad de valores en prestest como en posttest</h6>
+    </nav>
+    
+    <form class="login" action="/result" method="POST" >
+        <h4>Ingrese los valores de PRETEST separados por comas: (Ejemplo: 2,5,6,7)</h4>
+        <label for="pretest">Pretest:</label>
+        <input type="text" id="pretest" name="pretest" required ><br>
+        <h4>Ingrese los valores de POSTTEST separados por comas:(Ejemplo: 6,5,2,7)</h4>
+        <label for="posttest">Posttest:</label>
+        <input type="text" id="posttest" name="posttest" required><br><br>
+        <label for="respuesta">Utilizar valores recomendados (95% de confianza y 5% de margen de error)? (s/n):</label>
+        <input type="text" name="respuesta" id="respuesta" maxlength="1" ><br><br>
+        <div id="opcion" style="display: none;">
+            <h4>Ingrese el valor de alpha (margen de error) como un número decimal entre 0 y 1: (Ejemplo: 0.84  O  1)</h4>
+            <label for="alpha">Margen de error:</label>
+            <input type="number" name="alpha" id="alpha" step="0.01"><br><br>
+            <H4>Ingrese el valor del Nivel de confianza como un número decimal entre 0 y 1: (Ejemplo: 0.94  O  1)</H4>
+            <label for="trust_level">Nivel de Confianza:</label>
+            <input type="number" name="trust_level" id="trust_level" step="0.01"><br><br>
+        </div>
+        <input class="calcular" type="submit" value="Calcular" onclick="mostrarMensaje()">  
+    </form>
+    <br>
+    <div id="resultado"></div>
+    
+       
+    
+  <script src={{ url_for('static', filename='js/script.js')}}></script>
+</body>
+</html>
+

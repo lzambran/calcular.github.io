@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Resultado</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/estilos.css')}}"
+    />
+  </head>
+  <body>
+    <h1 class="resultado">Resultado</h1>
+    <div class="resultados">
+      <p class="titulo">Valort: <span class="muestra">{{ t }}</span></p>
+      <p class="titulo">Medios_pretest: <span class="muestra">{{ mean_pre }}</span> </p>
+      <p class="titulo">Medios_posttest: <span class="muestra">{{ mean_post }}</span> </p>
+      <p class="titulo">Diferencia_medios: <span class="muestra">{{ mean_diff }}</span></p>
+      <p class="titulo">Desviación_estándar: <span class="muestra">{{ std_dev_diff }}</span></p>
+      <p class="titulo">Margen_error: <span class="muestra">{{ margen_de_error }}</span></p>
+      <p class="titulo">Límite_inferior: <span class="muestra">{{ límite_inferior }}</span> </p>
+      <p class="titulo">Límite_superior: <span class="muestra">{{ límite_superior }}</span></p>
+      <p class="titulo">Nivel_confianza: <span class="muestra">{{ trust_level }}</span></p>
+      <p class="titulo">Intervalo_confianza: <span class="muestra">{{ intervalo_confianza }}</span></p>
+      <p class="titulo">Margen_error_alpha: <span class="muestra">{{ alpha }}</span></p>
+      <p class="titulo">Interpretacion:<span class="muestra">{{ interpretation }}</span></p>
+    </div>
+
+    <a class="calcular" href="/">Volver a calcular</a>
+  </body>
+</html>
